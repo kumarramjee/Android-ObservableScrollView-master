@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.github.ksoichiro:gradle-eclipse-aar-plugin:0.1.1'
+    }
+}
+
+allprojects {
+    group = GROUP
+    version = VERSION_NAME
+    repositories {
+        mavenCentral()
+    }
+}
+
+apply plugin: 'com.github.ksoichiro.eclipse.aar'
+
+eclipseAar {
+    projectNamePrefix = 'observablescrollview-'
+    cleanLibsDirectoryEnabled = true
+}
